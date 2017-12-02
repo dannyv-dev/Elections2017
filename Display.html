@@ -1,129 +1,22 @@
-<html>
+
 
 <!-- CREADO POR : coder4humanity (github) -->
 
+<html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<link rel="stylesheet" href="table.css">
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
-		<script src="./Elecciones2017.js"></script>
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ' crossorigin='anonymous'>
+		<link rel='stylesheet' href='table.css'>
+		<script src='https://code.jquery.com/jquery-3.1.1.slim.min.js' integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n' crossorigin='anonymous'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js' integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb' crossorigin='anonymous'></script>
+		<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js' integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn' crossorigin='anonymous'></script>
+		<script src='https://code.jquery.com/jquery-3.2.1.min.js'
+			  integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+			  crossorigin='anonymous'></script>
+		<script type='text/javascript' src='https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js'></script>
 	</head>
 
 	<body>
-		<div class= "container">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-1">
-						<img src="Bandera.png" height="44" width="80">
-					</div>
-					<div class="col-6" style="text-align: center">
-						<h1>Verificando las Elecciones</h1>
-					</div>
-					<div class="col-1">
-						<img src="Bandera.png" height="44" width="80">
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid" style="margin-top: 25">
-				<div class="alert alert-danger" role="alert">
-						<strong>Recuerda!</strong>  Debes resetear el sistema despues de cada procesamiento.
-						</br>
-						<strong>Recuerda!</strong>  Si quieres detener el procesamiento haz click en 'Resetear Sistema'.	
-				</div>
-				<div class="" role="alert">
-  					<div>
-  						<p>Instrucciones: </p>
-  					</div>
-  					<div>
-  						<ul>
-  							<li>1. Selecciona las actas que quieres inspeccionar.</li>
-  							<li>2. Haz click en 'Comenzar Procesamiento'. El sistema va a extraer la informacion de esas acta del TSE (api.tse.hn) y las procesara para darte un resumen en la parte debajo. Espera mientras las procesa, se tarda aproximadamente 1 segundo por acta.</li>
-  							<li>3. Cuando el sistema termine te recomendamos bajar el resumen. Haz click en 'Activar Descarga'.</li>
-  							<li>4. Haz click en la link 'Descarga Resumen'.</li>
-  							<li>5. Abre el archivo en tu computadora y verifica las actas. Asegurate de guardar tu trabajo al finalizar.</li>
-  							<li>6. Si quieres procesar otras actas debes regresar a esta pagina y hacer click en 'Resetear Sistema'. Esto borra el resumen presente y creara otro por eso debes descargar los resumenes.</li>
-  						</ul>
-
-  					</div>
-				</div>
-			</div>
-			<div class="container-fluid" style="margin-top: 25">
-				<div class="row" style="margin-bottom: 20">
-					<div class="col-5">
-						<div class="row" style="margin-bottom: 5">
-								<label class="col-2 col-form-label">Desde: </label>
-								<input id="startMER" class="col-10 form-control" type="text" placeholder="e.g. 100" /> 
-						</div>
-						<div class="row">
-								<label class="col-2 col-form-label">Hasta: </label>
-								<input id="endMER" class="col-10 form-control" type="text" placeholder="e.g. 200"/>
-						</div>
-					</div>
-					<div class="col-4">
-						<div style="position: relative; top: 50%; transform: translateY(-50%);">
-							<button id = "resetBotton" class="btn btn-warning" onclick="resetRepeticion()">Resetear Sistema</button>	
-						</div>
-					</div>
-				</div>
-				<div class="form-group row">
-					<button id = "startBotton" class="btn btn-success" style="margin-left: 20" onclick="startRepeticion()">Comenzar Procesamiento</button>
-<!-- 					<button id = "stopBotton" class="btn btn-danger" style="margin-left: 20" onclick="stopRepeticion()">Detener Procesamiento</button> -->
-
-				</div>
-			</div>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-12" >
-						<p>Procesando MER Numero : <span><b id="currentMER"></b></span></p>
-					</div>
-				</div>
-				<div class="row" style="margin-bottom: 20">
-					<div class="col-12">
-						<small>Click en "Activar Descarga" incluye informacion procesada hasta el moment. <b>[Antes de hacer click asegurarte de "Detener Procesamiento".]</b></small>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-3">
-						<ul style="position: relative; top: 50%; transform: translateY(-50%);">
-							<li id="jsonLinkItem"><a id ="jsonLink">Descargar JSON</a></li>
-							<li id="resumenLinkItem"><a id ="resumenLink">Descargar Resumen</a></li>
-						</ul>	
-					</div>
-					<div class="col-3" style="text-align: center;">
-						<div style="position: relative;top: 50%; transform: translateY(-50%); ">
-							<button id = "downloadBotton" class="btn btn-info" onclick="setDownloadFiles()">Activar Descarga</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-
-
-
-
 		<div id='HTMLFILE' class='container-fluid'>
-			<script>
-				$(document).ready(function(){
-
-					$("select").change(function(){
-						if ($(this).val() == "Verificada"){
-							$(this).closest("tr").css("background-color", "lightgreen");
-						}
-						else{
-							$(this).closest("tr").css("background-color", "");
-						}
-					});
-
-				});
-			</script>
 			<div class='jumbotron' style='margin-top:30'>
 				<div class='container-fluid'>
 
