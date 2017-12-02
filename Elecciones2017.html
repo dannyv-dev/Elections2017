@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+		<script src="./Elecciones2017.js"></script>
+		<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class= "container">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-1">
+						<img src="Bandera.png" height="44" width="80">
+					</div>
+					<div class="col-6" style="text-align: center">
+						<h1>Verificando las Elecciones</h1>
+					</div>
+					<div class="col-1">
+						<img src="Bandera.png" height="44" width="80">
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" style="margin-top: 25">
+				<div class="alert alert-danger" role="alert">
+  					<strong>Recuerda!</strong>  Debes resetear el sistema despues de cada procesamiento.
+				</div>
+			</div>
+			<div class="container-fluid" style="margin-top: 25">
+				<div class="row" style="margin-bottom: 20">
+					<div class="col-5">
+						<div class="row" style="margin-bottom: 5">
+								<label class="col-2 col-form-label">Desde: </label>
+								<input id="startMER" class="col-10 form-control" type="text" placeholder="e.g. 100" /> 
+						</div>
+						<div class="row">
+								<label class="col-2 col-form-label">Hasta: </label>
+								<input id="endMER" class="col-10 form-control" type="text" placeholder="e.g. 200"/>
+						</div>
+					</div>
+					<div class="col-4">
+						<div style="position: relative; top: 50%; transform: translateY(-50%);">
+							<button id = "resetBotton" class="btn btn-warning" onclick="resetRepeticion()">Resetear Sistema</button>	
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<button id = "startBotton" class="btn btn-success" style="margin-left: 20" onclick="startRepeticion()">Comenzar Procesamiento</button>
+					<button id = "stopBotton" class="btn btn-danger" style="margin-left: 20" onclick="stopRepeticion()">Detener Procesamiento</button>
+
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12" >
+						<p>Processando MER Numero : <span><b id="currentMER"></b></span></p>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom: 20">
+					<div class="col-12">
+						<small>Click en "Activar Descarga" incluye informacion procesada hasta el moment. <b>[Antes de hacer click asegurarte de "Detener Procesamiento".]</b></small>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-3">
+						<ul style="position: relative; top: 50%; transform: translateY(-50%);">
+							<li id="jsonLinkItem"><a id ="jsonLink">Descargar JSON</a></li>
+							<li id="resumenLinkItem"><a id ="resumenLink">Descargar Resumen</a></li>
+						</ul>	
+					</div>
+					<div class="col-3" style="text-align: center;">
+						<div style="position: relative;top: 50%; transform: translateY(-50%); ">
+							<button id = "downloadBotton" class="btn btn-info" onclick="setDownloadFiles()">Activar Descarga</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<table id="table">
+				
+			</table>
+		</div>
+	</body>
+</html>
