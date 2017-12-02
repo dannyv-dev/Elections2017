@@ -51,7 +51,7 @@ function extraerActas(comienzo, fin){
 				if(NomEstado == "Divulgacion"){
 
 					actas_Divulgacion.push(CodActa);
-					$("#listadoDivulgacion").append("<tr><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoDivulgacion").append("<tr><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 					//Verificacion de Datos
 					temp_VotosValidos = data.NumVotosValidos;
 					temp_VotosBlancos = data.NumVotosBlancos;
@@ -91,7 +91,7 @@ function extraerActas(comienzo, fin){
 
 					if(temp_ROMEO > temp_NASRALLA){
 						mesas_ROMEO_Nasralla.push(CodActa);
-						$("#listadoRomeo").append("<tr id='listadoRomeo-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+						$("#listadoRomeo").append("<tr id='listadoRomeo-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 					}
 
 					if(temp_JOH > temp_NASRALLA){
@@ -99,47 +99,47 @@ function extraerActas(comienzo, fin){
 						porcentaje = round(porcentaje,2);
 						if(porcentaje <= 0.5){
 							mesas_GANA_JOH_Doble.push(CodActa);
-							$("#listadoJOHGanaDoble").append("<tr id='listadoJOHGanaDoble-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+							$("#listadoJOHGanaDoble").append("<tr id='listadoJOHGanaDoble-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 
 						}
 						if((totalVotosValidos != temp_VotosValidos) || (totalVotos != temp_VotosTotal) ||
 						 (temp_PapeletasUtilizadas != totalVotos) || 
 						 ((temp_PapeletasRecibidas - totalVotos) != temp_PapeletasSobrantes)){
 							mesas_NumerosNoCuadran.push(CodActa);
-							$("#listadoNoCuadran").append("<tr id='listadoNoCuadran-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+							$("#listadoNoCuadran").append("<tr id='listadoNoCuadran-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 						}
 						mesas_GANA_JOH.push(CodActa);
-						$("#listadoJOHGana").append("<tr id='listadoJOHGana-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+						$("#listadoJOHGana").append("<tr id='listadoJOHGana-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 					}
 					else if (temp_NASRALLA > temp_JOH){
 						mesas_GANA_Nasralla.push(CodActa);
-						$("#listadoNasralla").append("<tr id='listadoNasralla-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+						$("#listadoNasralla").append("<tr id='listadoNasralla-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 					}
 					else if (temp_NASRALLA == temp_JOH){
 						mesas_Empate.push(CodActa);
-						$("#listadoEmpate").append("<tr id='listadoEmpate-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+						$("#listadoEmpate").append("<tr id='listadoEmpate-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 					}
 
 				}
 				else if(NomEstado == "Monitoreo"){
 					actas_Monitoreo.push(CodActa);
-					$("#listadoMonitoreo").append("<tr id='listadoMonitoreo-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoMonitoreo").append("<tr id='listadoMonitoreo-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 				}
 				else if(NomEstado == "No Recibido"){
 					actas_NoRecibido.push(CodActa);
-					$("#listadoNoRecibido").append("<tr id='listadoNoRecibido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoNoRecibido").append("<tr id='listadoNoRecibido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 				}
 				else if(NomEstado == "Recibido"){
 					actas_Recibido.push(CodActa);
-					$("#listadoRecibido").append("<tr id='listadoRecibido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoRecibido").append("<tr id='listadoRecibido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 				}
 				else if(NomEstado == "Escrutinio Especial"){
 					actas_EscrutinioEspecial.push(CodActa);
-					$("#listadoEscrutinioEspecial").append("<tr id='listadoEscrutinioEspecial-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoEscrutinioEspecial").append("<tr id='listadoEscrutinioEspecial-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 				}
 				else{
 					actas_Desconocido.push(CodActa);
-					$("#listadoDesconocido").append("<tr id='listadoDesconocido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td></tr>");
+					$("#listadoDesconocido").append("<tr id='listadoDesconocido-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td></tr>");
 				}
 
 				//Update HTML
@@ -175,7 +175,7 @@ function extraerActas(comienzo, fin){
 		    	mesas_Error.push(i);
 		    	actas_Total += 1; 
 		    	$("#actasError").html(mesas_Error.length);
-		    	$("#listadoError").append("<tr id='listadoError-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
+		    	$("#listadoError").append("<tr id='listadoError-"+CodActa+"'><td><a href='https://resultadosgenerales2017.tse.hn/Acta.html?nivel=1&mer="+CodActa+"' target='_blank'>"+ CodActa+"</a></td><td><select><option value='Por Verificar'>Por Verificar</option><option value='Verificada'>Verificada</option></select></td></td></tr>");
 		    }
 		});
 		TSE_Data_Counter++;	
